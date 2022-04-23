@@ -17,6 +17,7 @@ geopy = "^2.2.0"
 Shapely = "^1.8.1"
 requests = "^2.27.1"
 tweepy = "^4.8.0"
+kaleido = "0.2.1"
 
 [tool.poetry.dev-dependencies]
 jupyterlab = "^3.2.9"

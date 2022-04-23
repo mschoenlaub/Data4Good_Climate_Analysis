@@ -644,6 +644,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "kaleido"
+version = "0.2.1"
+description = "Static image export for web-based visualization libraries with zero dependencies"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "kiwisolver"
 version = "1.4.0"
 description = "A fast implementation of the Cassowary constraint solver"
@@ -1497,7 +1505,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.10"
-content-hash = "375a2c2a647204ec642caa7e332f7005cc1c96614d44f5659898940062f0749a"
+content-hash = "7dc4ba8c7fdcaff8abe79d05032fe46b480ae205b317955d72cbee5aa0348b95"
 
 [metadata.files]
 aiohttp = [
@@ -1919,6 +1927,14 @@ jupyterlab-server = [
 jupyterlab-widgets = [
     {file = "jupyterlab_widgets-1.1.0-py3-none-any.whl", hash = "sha256:c2a9bd3789f120f64d73268c066ed3b000c56bc1dda217be5cdc43e7b4ebad3f"},
     {file = "jupyterlab_widgets-1.1.0.tar.gz", hash = "sha256:d5f41bc1713795385f718d44dcba47e1e1473c6289f28a95aa6b2c0782ee372a"},
+]
+kaleido = [
+    {file = "kaleido-0.2.1-py2.py3-none-macosx_10_11_x86_64.whl", hash = "sha256:ca6f73e7ff00aaebf2843f73f1d3bacde1930ef5041093fe76b83a15785049a7"},
+    {file = "kaleido-0.2.1-py2.py3-none-macosx_11_0_arm64.whl", hash = "sha256:bb9a5d1f710357d5d432ee240ef6658a6d124c3e610935817b4b42da9c787c05"},
+    {file = "kaleido-0.2.1-py2.py3-none-manylinux1_x86_64.whl", hash = "sha256:aa21cf1bf1c78f8fa50a9f7d45e1003c387bd3d6fe0a767cfbbf344b95bdc3a8"},
+    {file = "kaleido-0.2.1-py2.py3-none-manylinux2014_aarch64.whl", hash = "sha256:845819844c8082c9469d9c17e42621fbf85c2b237ef8a86ec8a8527f98b6512a"},
+    {file = "kaleido-0.2.1-py2.py3-none-win32.whl", hash = "sha256:ecc72635860be616c6b7161807a65c0dbd9b90c6437ac96965831e2e24066552"},
+    {file = "kaleido-0.2.1-py2.py3-none-win_amd64.whl", hash = "sha256:4670985f28913c2d063c5734d125ecc28e40810141bdb0a46f15b76c1d45f23c"},
 ]
 kiwisolver = [
     {file = "kiwisolver-1.4.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:70e7b7a4ebeddef423115ea31857732fc04e0f38dd1e6385e1af05b6164a3d0f"},
