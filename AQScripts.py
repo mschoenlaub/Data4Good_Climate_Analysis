@@ -99,6 +99,7 @@ def runner():
     # fig.show()
 
     fig.write_json("input/aiqmap.json")
+    fig.write_image("input/aiqmap.png")
 
 
 # This is a support function used to get the json 
