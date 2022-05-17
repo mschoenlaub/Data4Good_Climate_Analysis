@@ -133,21 +133,22 @@ def get_latest_data(stations: json):
             (f"https://website-api.airvisual.com/v1/stations/{stations[count].get('id')}/measurements?units.temperature=celsius&units.distance=kilometer&units.pressure=millibar&AQI=US&language=en")
         stations_tempdf = pd.json_normalize(station_data.json()['measurements']['hourly'])
 
-        # Add a name column
-        stations_tempdf.loc[:, 'station_name'] = station['name']
+        if "aqi" in stations_tempdf:
+            # Add a name column
+            stations_tempdf.loc[:, 'station_name'] = station['name']
 
-        # Use Forward fill to fill in missing data
-        stations_tempdf['aqi'] = stations_tempdf['aqi'].fillna(method='ffill')
+            # Use Forward fill to fill in missing data
+            stations_tempdf['aqi'] = stations_tempdf['aqi'].fillna(method='ffill')
 
-        # Replace the NaN that did not get filled in with 0
-        stations_tempdf['aqi'] = stations_tempdf['aqi'].replace(pd.NA, 0)
+            # Replace the NaN that did not get filled in with 0
+            stations_tempdf['aqi'] = stations_tempdf['aqi'].replace(pd.NA, 0)
 
-        # Get the latest data only
-        stations_df_row = pd.DataFrame(stations_tempdf.iloc[-1][['ts', 'aqi', 'station_name']].copy())
-        stations_df_column = stations_df_row.transpose()
+            # Get the latest data only
+            stations_df_row = pd.DataFrame(stations_tempdf.iloc[-1][['ts', 'aqi', 'station_name']].copy())
+            stations_df_column = stations_df_row.transpose()
 
-        # Concat to our dataframe that contains all of the stations
-        data_df = pd.concat([data_df, stations_df_column], ignore_index=True)
+            # Concat to our dataframe that contains all of the stations
+            data_df = pd.concat([data_df, stations_df_column], ignore_index=True)
 
     return data_df
 
